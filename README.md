@@ -15,4 +15,6 @@ https://ja.reactjs.org/tutorial/tutorial.html
 1. 着手履歴のリストを昇順・降順いずれでも並べかえられるよう、トグルボタンを追加する。<br>
    https://github.com/KON-ch/react-tutorial/commit/aff233
 1. どちらかが勝利した際に、勝利につながった 3 つのマス目をハイライトする。<br>
+   https://github.com/KON-ch/react-tutorial/commit/bcf341
 1. どちらも勝利しなかった場合、結果が引き分けになったというメッセージを表示する。<br>
+   https://github.com/KON-ch/react-tutorial/commit/1eed7e
