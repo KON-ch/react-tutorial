@@ -1,6 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import './index.css';
+
+const container = document.getElementById('root');
+const root = createRoot(container)
 
 class Square extends React.Component {
   constructor(props){
@@ -71,7 +74,4 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('root')
-);
+root.render(<Game />);
