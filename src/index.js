@@ -67,6 +67,7 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
+      reverseSort: false,
     }
   }
 
@@ -95,6 +96,12 @@ class Game extends React.Component {
       stepNumber: step,
       xIsNext: (step % 2) === 0,
     })
+  }
+
+  toggleSort() {
+    this.setState({
+      reverseSort: !this.state.reverseSort
+    });
   }
 
   render() {
@@ -129,6 +136,8 @@ class Game extends React.Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X': 'O');
     }
 
+    const sort = this.state.reverseSort ? 'desc' : 'asc'
+
     return (
       <div className="game">
         <div className="game-board">
@@ -139,7 +148,10 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <button onClick={() => this.toggleSort()}>{sort}</button>
+          <ol reversed={this.state.reverseSort}>
+            {this.state.reverseSort ? moves.reverse() : moves}
+          </ol>
         </div>
       </div>
     );
