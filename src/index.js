@@ -5,6 +5,9 @@ import './index.css';
 const container = document.getElementById('root');
 const root = createRoot(container)
 
+const cols = 3
+const rows = 3
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -15,8 +18,6 @@ function Square(props) {
 
 class Board extends React.Component {
   renderSquare() {
-    const rows = 3
-
     // [0, 1, 2]
     const rowsArray = Array(rows).fill(null).map((_, i) => i)
 
@@ -30,8 +31,6 @@ class Board extends React.Component {
   }
 
   renderRow(row) {
-    const cols = 3
-
     // [0, 1, 2] or [3, 4, 6] or [7, 8, 9]
     const colsArray = Array(cols).fill(null).map((_, i) => row * cols + i)
 
@@ -64,7 +63,7 @@ class Game extends React.Component {
     super(props);
     this.state = {
       history: [{
-        squares: Array(9).fill(null),
+        squares: Array(cols * rows).fill(null),
       }],
       stepNumber: 0,
       xIsNext: true,
